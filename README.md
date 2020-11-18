@@ -1,10 +1,7 @@
-pyQuirk
-===============================
 
-Widget for Quirk
+pyQuirk - a Widget for Quirk
 
 Installation
-------------
 
 To install use pip:
 
@@ -31,4 +28,3 @@ When actively developing your extension, build Jupyter Lab with the command:
 This takes a minute or so to get started, but then automatically rebuilds JupyterLab when your javascript changes.
 
 Note on first `jupyter lab --watch`, you may need to touch a file to get Jupyter Lab to open.
-
