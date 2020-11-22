@@ -1,0 +1,6 @@
+recursive-include pyQuirk/static *.*
+include pyQuirk.json
+
+include LICENSE
+include setup.py
+include pyproject.toml
