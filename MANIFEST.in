@@ -1,5 +1,7 @@
 recursive-include pyQuirk/static *.*
 include pyQuirk.json
+include pyQuirk/quirk.html
+include pyQuirk/quirk2.html
 
 include LICENSE
 include setup.py
