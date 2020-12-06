@@ -10,3 +10,6 @@ pyQuirk/static/
 
 # OS X
 .DS_Store
+
+# Test files
+quirk-widget.ipynb
