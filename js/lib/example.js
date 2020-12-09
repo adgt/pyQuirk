@@ -38,7 +38,7 @@ var QuirkView = widgets.DOMWidgetView.extend({
 
 		this.frame = document.createElement('iframe');
 		this.frame.id = "iframe";
-		this.frame.height = 350;
+		this.frame.height = 450;
 		this.frame.width = 1000;
 		this.frame.src = 'pyQuirk/quirk.html';//#circuit={"cols":[["Z"],[1,"H","Y"]]}';
 		
