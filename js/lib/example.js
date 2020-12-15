@@ -1,6 +1,9 @@
 var widgets = require('@jupyter-widgets/base');
 var _ = require('lodash');
 
+// var quirkHtml = require('html-loader!./quirk.html');
+var quirkUrl = require('file-loader!./quirk.html');
+
 // See example.py for the kernel counterpart to this file.
 
 
@@ -31,7 +34,6 @@ var QuirkModel = widgets.DOMWidgetModel.extend({
 	})
 });
 
-
 var QuirkView = widgets.DOMWidgetView.extend({
 
 	render: function() {
@@ -40,7 +42,7 @@ var QuirkView = widgets.DOMWidgetView.extend({
 		this.frame.id = "iframe";
 		this.frame.height = 450;
 		this.frame.width = 1000;
-		this.frame.src = 'pyQuirk/quirk.html';//#circuit={"cols":[["Z"],[1,"H","Y"]]}';
+		this.frame.src = quirkUrl.default;//#circuit={"cols":[["Z"],[1,"H","Y"]]}';
 		
 		this.el.appendChild(this.frame);
 
@@ -49,7 +51,7 @@ var QuirkView = widgets.DOMWidgetView.extend({
 
 	circuit_updated: function() {
 
-		this.frame.src = 'pyQuirk/quirk.html' + `#circuit={"cols":${this.model.get("circuit_qasm").replaceAll("'", "\"")}}`; // #circuit={"cols":[["Z"],[1,"H","Y"]]}';
+		this.frame.src = quirkUrl.default + `#circuit={"cols":${this.model.get("circuit_qasm").replaceAll("'", "\"")}}`; // #circuit={"cols":[["Z"],[1,"H","Y"]]}';
 	}
 });
 
