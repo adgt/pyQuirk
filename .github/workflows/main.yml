@@ -34,6 +34,7 @@ jobs:
           cd Quirk
           npm install
           npm run build
+          cd ..
           cp Quirk/out/quirk.html js/lib -f
       # Runs a set of commands using the runners shell
       - name: create pull request
