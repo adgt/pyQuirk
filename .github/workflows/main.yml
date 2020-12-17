@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: initialize quirk submodule
-        run: git submodule update --init --recursive
+        run: git submodule update --init --recursive --remote
 
       - name: build quirk
         run: |
