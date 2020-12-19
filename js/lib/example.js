@@ -30,7 +30,8 @@ var QuirkModel = widgets.DOMWidgetModel.extend({
 		_view_module : 'pyQuirk',
 		_model_module_version : '0.1.0',
 		_view_module_version : '0.1.0',
-		value : 'Hello World!'
+		width : 1000,
+		height : 450,
 	})
 });
 
@@ -38,15 +39,16 @@ var QuirkView = widgets.DOMWidgetView.extend({
 
 	render: function() {
 
+		model = this.model;
+		
 		this.frame = document.createElement('iframe');
 		this.frame.id = "iframe";
-		this.frame.height = 450;
-		this.frame.width = 1000;
+		this.frame.width = model.get('width');
+		this.frame.height = model.get('height');
 		this.frame.src = quirkUrl.default;//#circuit={"cols":[["Z"],[1,"H","Y"]]}';
 		// this.frame.srcdoc = quirkHtml; // use html-loader instead of file-loader for this
 		// this.el.innerHTML = quirkHtml;
 		
-		model = this.model;
 		this.frame.onload = function() {
 			console.log("IFRAME loaded: " + this.src);
 			this.contentWindow.addEventListener('hashchange', function() {
@@ -67,6 +69,16 @@ var QuirkView = widgets.DOMWidgetView.extend({
 		this.el.appendChild(this.frame);
 
 		this.model.on('change:value', this.circuit_updated, this);
+		this.model.on('change:width', this.update_width, this);
+		this.model.on('change:height', this.update_height, this);
+	},
+
+	update_width: function(change) {
+		this.frame.width = change.new
+	},
+
+	update_height: function(change) {
+		this.frame.height = change.height
 	},
 
 	circuit_updated: function() {

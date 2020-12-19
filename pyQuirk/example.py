@@ -1,5 +1,5 @@
 import ipywidgets as widgets
-from traitlets import Unicode
+from traitlets import Unicode, Integer
 from .quirk import qasm_to_quirk
 # See js/lib/example.js for the frontend counterpart to this file.
 
@@ -28,6 +28,8 @@ class Quirk(widgets.DOMWidget):
 	# Widget properties are defined as traitlets. Any property tagged with `sync=True`
 	# is automatically synced to the frontend *any* time it changes in Python.
 	# It is synced back to Python from the frontend *any* time the model is touched.
+	width = Integer(1000).tag(sync=True)
+	height = Integer(450).tag(sync=True)
 	value = Unicode("").tag(sync=True)
 	circuit_qasm = Unicode("").tag(sync=True)
 
