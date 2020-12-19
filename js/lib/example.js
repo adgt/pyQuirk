@@ -43,15 +43,35 @@ var QuirkView = widgets.DOMWidgetView.extend({
 		this.frame.height = 450;
 		this.frame.width = 1000;
 		this.frame.src = quirkUrl.default;//#circuit={"cols":[["Z"],[1,"H","Y"]]}';
+		// this.frame.srcdoc = quirkHtml; // use html-loader instead of file-loader for this
+		// this.el.innerHTML = quirkHtml;
 		
+		model = this.model;
+		this.frame.onload = function() {
+			console.log("IFRAME loaded: " + this.src);
+			this.contentWindow.addEventListener('hashchange', function() {
+				console.log("HASHCHANGE");
+			});
+			this.contentWindow.onhashchange = function() {
+				console.log("hashchange");
+			};
+					
+			this.contentWindow.onclick = function() {
+				console.log("ONCLICK");
+				qasm = this.document.getElementById('export-qasm-pre').innerText;
+				model.set('circuit_qasm', qasm);
+				model.save_changes();
+			};	
+		};
+
 		this.el.appendChild(this.frame);
 
-		this.model.on('change:circuit_qasm', this.circuit_updated, this);
+		this.model.on('change:value', this.circuit_updated, this);
 	},
 
 	circuit_updated: function() {
 
-		this.frame.src = quirkUrl.default + `#circuit={"cols":${this.model.get("circuit_qasm").replaceAll("'", "\"")}}`; // #circuit={"cols":[["Z"],[1,"H","Y"]]}';
+		this.frame.src = quirkUrl.default + `#circuit={"cols":${this.model.get("value").replaceAll("'", "\"")}}`; // #circuit={"cols":[["Z"],[1,"H","Y"]]}';
 	}
 });
 

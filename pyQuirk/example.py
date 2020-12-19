@@ -28,11 +28,9 @@ class Quirk(widgets.DOMWidget):
 	# Widget properties are defined as traitlets. Any property tagged with `sync=True`
 	# is automatically synced to the frontend *any* time it changes in Python.
 	# It is synced back to Python from the frontend *any* time the model is touched.
-	# value = Unicode(get_source_code()).tag(sync=True)
-
+	value = Unicode("").tag(sync=True)
 	circuit_qasm = Unicode("").tag(sync=True)
 
 	def update_circuit(self, circuit):
-		self.circuit_qasm = qasm_to_quirk(circuit);
-
-	
+		self.circuit_qasm = circuit.qasm()
+		self.value = qasm_to_quirk(circuit)
