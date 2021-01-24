@@ -1,0 +1,3 @@
+[submodule "Quirk"]
+	path = Quirk
+	url = https://github.com/adgt/Quirk
