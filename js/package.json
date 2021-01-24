@@ -1,0 +1,44 @@
+{
+  "name": "pyQuirk",
+  "version": "0.1.0",
+  "description": "A Python widget for Quirk to use in to be used in Jupyter notebooks, JupyterLab, and the IPython kernel.",
+  "author": "Aditya Giridharan",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adgt/pyQuirk.git"
+  },
+  "keywords": [
+    "jupyter",
+    "widgets",
+    "ipython",
+    "ipywidgets",
+    "jupyterlab-extension"
+  ],
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.html",
+    "dist/*.js"
+  ],
+  "scripts": {
+    "clean": "rimraf dist/",
+    "prepublish": "webpack",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "html-loader": "^1.3.2",
+    "rimraf": "^2.6.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "@jupyter-widgets/base": "^1.1 || ^2 || ^3",
+    "lodash": "^4.17.4"
+  },
+  "jupyterlab": {
+    "extension": "lib/labplugin"
+  }
+}
