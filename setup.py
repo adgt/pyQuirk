@@ -19,7 +19,7 @@ log.info('setup.py entered')
 log.info('$PATH=%s' % os.environ['PATH'])
 
 name = 'pyQuirk'
-LONG_DESCRIPTION = 'A Python widget for Quirk to use in to be used in Jupyter notebooks, JupyterLab, and the IPython kernel.'
+LONG_DESCRIPTION = 'A Python widget for Quirk to be used in Jupyter notebooks, JupyterLab, and the IPython kernel.'
 
 # Get pyQuirk version
 version = get_version(pjoin(name, '_version.py'))

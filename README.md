@@ -7,7 +7,7 @@ A Python [widget](https://github.com/jupyter-widgets/ipywidgets) for [Quirk](htt
 ## Getting Started
 ### Installation
 
-Installation currently requires a source install (PyPI packages coming soon). Tested with JupyterLab 2, so may not work in JupyterLab 3 just yet.
+Installation currently requires a development installation (PyPI packages coming soon). Tested with JupyterLab 2, so may not work in JupyterLab 3 just yet.
 
 For a development installation (requires npm),
 
@@ -29,7 +29,7 @@ Take a look at [example.ipynb](example.ipynb) for a simple example.
 
 Otherwise, you can simply run:
 ```
-import pyQuirk
+from pyQuirk import Quirk
 quirk = Quirk()
 quirk()
 ```
