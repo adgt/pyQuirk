@@ -13,9 +13,9 @@ To install use pip:
 
     $ pip install pyQuirk
 
-If you are using JupyterLab <=2:
+If you are using JupyterLab <= 2 (note the lowercase 'pyquirk'):
 
-    $ jupyter labextension install @jupyter-widgets/jupyterlab-manager pyQuirk
+    $ jupyter labextension install @jupyter-widgets/jupyterlab-manager pyquirk
 
 For a development installation (requires npm),
 
