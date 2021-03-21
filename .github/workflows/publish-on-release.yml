@@ -15,11 +15,12 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.7
-      - name: Publish distribution to NPM
+      - name: Set up NodeJS
         uses: actions/setup-node@v1
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+      - name: Publish distribution to NPM
         run: npm ci
         run: npm publish
         env:
