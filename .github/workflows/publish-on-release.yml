@@ -22,6 +22,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Publish distribution to NPM
         run: |
+          cd js
           npm ci
           npm publish
         env:
