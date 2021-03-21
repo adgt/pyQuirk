@@ -7,30 +7,15 @@ A Python [widget](https://github.com/jupyter-widgets/ipywidgets) for [Quirk](htt
 ## Getting Started
 ### Installation
 
-Tested with JupyterLab 2, so may not work in JupyterLab 3 just yet.
+Tested with JupyterLab 2, so may not work in JupyterLab 3 just yet. If you are wanting to use this with Jupyter notebook, then follow the [development install instructions](#development) below.
 
-To install use pip:
+To install use pip (only works for JupyterLab currently):
 
     $ pip install pyquirk
 
 If you are using JupyterLab <= 2 (note the lowercase 'pyquirk'):
 
     $ jupyter labextension install @jupyter-widgets/jupyterlab-manager pyquirk
-
-For a development installation (requires npm),
-
-    $ git clone https://github.com/adgt/pyquirk.git
-    $ cd pyquirk
-    $ pip install -e .
-
-If you are working in Jupyter notebooks, then run the following commands:
-
-    $ jupyter nbextension install --py --symlink --sys-prefix pyquirk
-    $ jupyter nbextension enable --py --sys-prefix pyquirk
-
-If you are working in JupyterLab, then run the following command:    
-
-    $ jupyter labextension install js
 
 ### Example
 
@@ -56,7 +41,22 @@ Quirk()
 
 ## Development
 
-Follow the instructions above for a development installation. Then, to actively developing on your machine, run Jupyter Lab with the command:
+For a development installation (requires [Node.js](https://nodejs.org)),
+
+    $ git clone https://github.com/adgt/pyquirk.git
+    $ cd pyquirk
+    $ pip install -e .
+
+If you are working in Jupyter notebooks, then run the following commands:
+
+    $ jupyter nbextension install --py --symlink --sys-prefix pyQuirk
+    $ jupyter nbextension enable --py --sys-prefix pyQuirk
+
+If you are working in JupyterLab, then run the following command:    
+
+    $ jupyter labextension install js
+
+Follow the instructions above for a development installation. Then, to actively develop on your machine, run Jupyter Lab with the command:
 
     $ jupyter lab --watch
 
