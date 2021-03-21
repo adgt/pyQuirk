@@ -2,11 +2,11 @@ var plugin = require('./index');
 var base = require('@jupyter-widgets/base');
 
 module.exports = {
-  id: 'pyQuirk',
+  id: 'pyquirk',
   requires: [base.IJupyterWidgetRegistry],
   activate: function(app, widgets) {
       widgets.registerWidget({
-          name: 'pyQuirk',
+          name: 'pyquirk',
           version: plugin.version,
           exports: plugin
       });

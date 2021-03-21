@@ -32,8 +32,8 @@ jstargets = [
 ]
 
 data_files_spec = [
-    ('share/jupyter/nbextensions/pyQuirk', 'pyQuirk/static', '*.*'),
-    ('etc/jupyter/nbconfig/notebook.d', '.', 'pyQuirk.json'),
+    ('share/jupyter/nbextensions/pyquirk', 'pyquirk/static', '*.*'),
+    ('etc/jupyter/nbconfig/notebook.d', '.', 'pyquirk.json'),
 ]
 
 cmdclass = create_cmdclass('jsdeps', data_files_spec=data_files_spec)

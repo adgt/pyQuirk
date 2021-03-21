@@ -6,5 +6,5 @@ Package Install
 - [node](http://nodejs.org/)
 
 ```bash
-npm install --save pyQuirk
+npm install --save pyquirk
 ```

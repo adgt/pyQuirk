@@ -1,6 +1,6 @@
 {
   "name": "pyquirk",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A Python widget for Quirk to use in to be used in Jupyter notebooks, JupyterLab, and the IPython kernel.",
   "author": "Aditya Giridharan",
   "main": "lib/index.js",

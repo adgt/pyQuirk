@@ -11,7 +11,7 @@ Tested with JupyterLab 2, so may not work in JupyterLab 3 just yet.
 
 To install use pip:
 
-    $ pip install pyQuirk
+    $ pip install pyquirk
 
 If you are using JupyterLab <= 2 (note the lowercase 'pyquirk'):
 
@@ -19,14 +19,14 @@ If you are using JupyterLab <= 2 (note the lowercase 'pyquirk'):
 
 For a development installation (requires npm),
 
-    $ git clone https://github.com/adgt/pyQuirk.git
-    $ cd pyQuirk
+    $ git clone https://github.com/adgt/pyquirk.git
+    $ cd pyquirk
     $ pip install -e .
 
 If you are working in Jupyter notebooks, then run the following commands:
 
-    $ jupyter nbextension install --py --symlink --sys-prefix pyQuirk
-    $ jupyter nbextension enable --py --sys-prefix pyQuirk
+    $ jupyter nbextension install --py --symlink --sys-prefix pyquirk
+    $ jupyter nbextension enable --py --sys-prefix pyquirk
 
 If you are working in JupyterLab, then run the following command:    
 

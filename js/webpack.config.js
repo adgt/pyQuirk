@@ -20,7 +20,7 @@ module.exports = [
         entry: './lib/extension.js',
         output: {
             filename: 'extension.js',
-            path: path.resolve(__dirname, '..', 'pyQuirk', 'static'),
+            path: path.resolve(__dirname, '..', 'pyquirk', 'static'),
             libraryTarget: 'amd'
         }
     },
@@ -33,7 +33,7 @@ module.exports = [
         entry: './lib/index.js',
         output: {
             filename: 'index.js',
-            path: path.resolve(__dirname, '..', 'pyQuirk', 'static'),
+            path: path.resolve(__dirname, '..', 'pyquirk', 'static'),
             libraryTarget: 'amd'
         },
         devtool: 'source-map',
@@ -42,7 +42,7 @@ module.exports = [
         },
         externals: ['@jupyter-widgets/base']
     },
-    {// Embeddable pyQuirk bundle
+    {// Embeddable pyquirk bundle
      //
      // This bundle is generally almost identical to the notebook bundle
      // containing the custom widget views and models.
@@ -61,7 +61,7 @@ module.exports = [
             filename: 'index.js',
             path: path.resolve(__dirname, 'dist'),
             libraryTarget: 'amd',
-            publicPath: 'https://unpkg.com/pyQuirk@' + version + '/dist/'
+            publicPath: 'https://unpkg.com/pyquirk@' + version + '/dist/'
         },
         devtool: 'source-map',
         module: {
