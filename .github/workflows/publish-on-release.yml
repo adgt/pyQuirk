@@ -21,8 +21,9 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - name: Publish distribution to NPM
-        run: npm ci
-        run: npm publish
+        run: |
+          npm ci
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - name: Install pypa/build
