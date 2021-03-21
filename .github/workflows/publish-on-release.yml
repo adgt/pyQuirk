@@ -1,11 +1,10 @@
-name: Publish to PyPi
+name: Publish to NPM/PyPi
 
 on:
   release:
     types: [created]
   # Additionally, allow this workflow to be run manually from the Actions tab
   workflow_dispatch:
-
 
 jobs:
   build-and-publish:
