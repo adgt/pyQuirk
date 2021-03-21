@@ -7,7 +7,15 @@ A Python [widget](https://github.com/jupyter-widgets/ipywidgets) for [Quirk](htt
 ## Getting Started
 ### Installation
 
-Installation currently requires a development installation (PyPI packages coming soon). Tested with JupyterLab 2, so may not work in JupyterLab 3 just yet.
+Tested with JupyterLab 2, so may not work in JupyterLab 3 just yet.
+
+To install use pip:
+
+    $ pip install pyQuirk
+
+If you are using JupyterLab <=2:
+
+    $ jupyter labextension install @jupyter-widgets/jupyterlab-manager pyQuirk
 
 For a development installation (requires npm),
 
@@ -15,12 +23,13 @@ For a development installation (requires npm),
     $ cd pyQuirk
     $ pip install -e .
 
-If you are working in Jupyter notebookes, then run the following commands:
+If you are working in Jupyter notebooks, then run the following commands:
 
     $ jupyter nbextension install --py --symlink --sys-prefix pyQuirk
     $ jupyter nbextension enable --py --sys-prefix pyQuirk
 
 If you are working in JupyterLab, then run the following command:    
+
     $ jupyter labextension install js
 
 ### Example
@@ -28,10 +37,10 @@ If you are working in JupyterLab, then run the following command:
 Take a look at [example.ipynb](example.ipynb) for a simple example.
 
 Otherwise, you can simply run:
-```
+```python
 from pyQuirk import Quirk
 quirk = Quirk()
-quirk()
+quirk
 ```
 
 ### API

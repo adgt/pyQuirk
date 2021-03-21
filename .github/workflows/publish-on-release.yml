@@ -16,6 +16,16 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.7
+      - name: Publish distribution to NPM
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+          with:
+            node-version: 12
+            registry-url: https://registry.npmjs.org/
+        - run: npm ci
+        - run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
       - name: Install pypa/build
         run: >-
           python -m
