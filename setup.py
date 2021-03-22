@@ -12,6 +12,7 @@ from jupyter_packaging import (
     get_version,
 )
 
+
 here = os.path.dirname(os.path.abspath(__file__))
 
 log.set_verbosity(log.DEBUG)
@@ -32,13 +33,15 @@ jstargets = [
 ]
 
 data_files_spec = [
-    ('share/jupyter/nbextensions/pyQuirk', 'pyQuirk/static', '*.*'),
-    ('etc/jupyter/nbconfig/notebook.d', '.', 'pyQuirk.json'),
+    ('share/jupyter/nbextensions/pyquirk', 'pyQuirk/nbextension', '*.*'),
+    ('share/jupyter/labextensions/pyquirk', 'pyQuirk/labextension', '**'),
+    ('share/jupyter/labextensions/pyquirk', '.', 'install.json'),
+    ('etc/jupyter/nbconfig/notebook.d', '.', 'pyquirk.json'),
 ]
 
 cmdclass = create_cmdclass('jsdeps', data_files_spec=data_files_spec)
 cmdclass['jsdeps'] = combine_commands(
-    install_npm(js_dir, build_cmd='build'), ensure_targets(jstargets),
+    install_npm(js_dir, npm=['yarn'], build_cmd='build:prod'), ensure_targets(jstargets),
 )
 
 setup_args = dict(
@@ -48,7 +51,7 @@ setup_args = dict(
     long_description=LONG_DESCRIPTION,
     include_package_data=True,
     install_requires=[
-        'ipywidgets>=7.0.0',
+        'ipywidgets>=7.6.0',
     ],
     packages=find_packages(),
     zip_safe=False,
@@ -67,14 +70,10 @@ setup_args = dict(
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
         'Topic :: Multimedia :: Graphics',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
 )
 

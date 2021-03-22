@@ -1,4 +1,5 @@
-Python widget for Quirk
+A Python widget for Quirk
+
 Package Install
 ---------------
 
@@ -6,5 +7,5 @@ Package Install
 - [node](http://nodejs.org/)
 
 ```bash
-npm install --save pyQuirk
+npm install --save pyquirk
 ```

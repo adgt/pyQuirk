@@ -10,7 +10,7 @@ git add and git commit
 git push
 git push --tags
 
-- To release a new version of pyQuirk on NPM:
+- To release a new version of pyquirk on NPM:
 
 Update `js/package.json` with new npm package version
 

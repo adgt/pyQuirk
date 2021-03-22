@@ -15,3 +15,5 @@ pyQuirk/static/
 .vscode/settings.json
 
 MANIFEST
+pyQuirk/labextension/
+pyQuirk/nbextension/

@@ -1,7 +1,7 @@
 var widgets = require('@jupyter-widgets/base');
 var _ = require('lodash');
 
-var quirkUrl = require('file-loader!./quirk.html');
+var quirkUrl = require('./quirk.html');
 // See quirk.py for the kernel counterpart to this file.
 
 // Custom Model. Custom widgets models must at least provide default values
@@ -23,10 +23,10 @@ var QuirkModel = widgets.DOMWidgetModel.extend({
 	defaults: _.extend(widgets.DOMWidgetModel.prototype.defaults(), {
 		_model_name : 'QuirkModel',
 		_view_name : 'QuirkView',
-		_model_module : 'pyQuirk',
-		_view_module : 'pyQuirk',
-		_model_module_version : '0.1.0',
-		_view_module_version : '0.1.0',
+		_model_module : 'pyquirk',
+		_view_module : 'pyquirk',
+		_model_module_version : '0.1.6',
+		_view_module_version : '0.1.6',
 		width : 1000,
 		height : 450,
 		scale : 0.5,

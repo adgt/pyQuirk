@@ -1,11 +1,10 @@
-name: Publish to PyPi
+name: Publish to NPM/PyPi
 
 on:
   release:
     types: [created]
   # Additionally, allow this workflow to be run manually from the Actions tab
   workflow_dispatch:
-
 
 jobs:
   build-and-publish:
@@ -16,6 +15,18 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.7
+      - name: Set up NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - name: Publish distribution to NPM
+        run: |
+          cd js
+          npm ci
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - name: Install pypa/build
         run: >-
           python -m
