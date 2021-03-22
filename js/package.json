@@ -22,8 +22,8 @@
   ],
   "scripts": {
     "clean": "rimraf dist/ && rimraf ../pyQuirk/labextension/ && rimraf ../pyQuirk/nbextension",
-    "prepublish": "yarn run clean && yarn run build:prod",
-    "publish": "yarn run clean && webpack --mode=production",
+    "prepublish": "yarn run clean && yarn run webpack",
+    "webpack": "webpack --mode=production",
     "build": "webpack --mode=development && yarn run build:labextension:dev",
     "build:prod": "webpack --mode=production && yarn run build:labextension",
     "build:labextension": "jupyter labextension build .",
