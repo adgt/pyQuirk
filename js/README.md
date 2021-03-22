@@ -1,4 +1,5 @@
-Python widget for Quirk
+A Python widget for Quirk
+
 Package Install
 ---------------
 

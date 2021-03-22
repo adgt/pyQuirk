@@ -1,7 +1,7 @@
 var widgets = require('@jupyter-widgets/base');
 var _ = require('lodash');
 
-var quirkUrl = require('file-loader!./quirk.html');
+var quirkUrl = require('./quirk.html');
 // See quirk.py for the kernel counterpart to this file.
 
 // Custom Model. Custom widgets models must at least provide default values
