@@ -1,5 +1,7 @@
 
 # pyQuirk
+[![pypi](https://img.shields.io/pypi/v/pyQuirk.svg)](https://pypi.org/project/pyQuirk/)
+
 A Python [widget](https://github.com/jupyter-widgets/ipywidgets) for [Quirk](https://github.com/Strilanc/Quirk) to be used in Jupyter notebooks, JupyterLab, and the IPython kernel.
 
 ![Example](example.gif)
@@ -7,15 +9,11 @@ A Python [widget](https://github.com/jupyter-widgets/ipywidgets) for [Quirk](htt
 ## Getting Started
 ### Installation
 
-Tested with JupyterLab 2, so may not work in JupyterLab 3 just yet. If you are wanting to use this with Jupyter notebook, then follow the [development install instructions](#development) below.
+To install use pip (JupyterLab 3 recommended):
 
-To install use pip (only works for JupyterLab currently):
+    $ pip install pyQuirk
 
-    $ pip install pyquirk
-
-If you are using JupyterLab <= 2 (note the lowercase 'pyquirk'):
-
-    $ jupyter labextension install @jupyter-widgets/jupyterlab-manager pyquirk
+If you are wanting to use this with JupyterLab 2 or a classical Jupyter notebook install (i.e. not the one included with JupyterLab 3), then you can try following the [development install instructions](#development) below, but YMMV.
 
 ### Example
 
@@ -41,27 +39,26 @@ Quirk()
 
 ## Development
 
-For a development installation (requires [Node.js](https://nodejs.org)),
+For a development installation (requires [Node.js](https://nodejs.org) and [Yarn version 1](https://classic.yarnpkg.com/)),
 
-    $ git clone https://github.com/adgt/pyquirk.git
-    $ cd pyquirk
+    $ git clone https://github.com/adgt/pyQuirk.git
+    $ cd pyQuirk
     $ pip install -e .
 
-If you are working in Jupyter notebooks, then run the following commands:
+If you are working with Jupyter notebook, then run these commands:
 
-    $ jupyter nbextension install --py --symlink --sys-prefix pyQuirk
+    $ jupyter nbextension install --py --symlink --overwrite --sys-prefix pyQuirk
     $ jupyter nbextension enable --py --sys-prefix pyQuirk
 
-If you are working in JupyterLab, then run the following command:    
+If you are working with JupyterLab 3, run the command:
 
-    $ jupyter labextension install js
+    $ jupyter labextension develop --overwrite pyQuirk
 
-Follow the instructions above for a development installation. Then, to actively develop on your machine, run Jupyter Lab with the command:
+Then you need to rebuild the JS when you make a code change:
 
-    $ jupyter lab --watch
+    $ cd js
+    $ yarn run build
 
-This takes a minute or so to get started, but then automatically rebuilds JupyterLab when your javascript changes.
-
-Note on first `jupyter lab --watch`, you may need to touch a file to get Jupyter Lab to open.
+You then need to refresh the JupyterLab page when your javascript changes.
 
 #### Project repository created with the [widget-cookiecutter](https://github.com/jupyter-widgets/widget-cookiecutter) template
