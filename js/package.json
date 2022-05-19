@@ -25,6 +25,7 @@
     "prepublish": "yarn run clean && yarn run webpack",
     "webpack": "webpack --mode=production",
     "build": "webpack --mode=development && yarn run build:labextension:dev",
+    "build:nbextension": "webpack --mode=production",
     "build:prod": "webpack --mode=production && yarn run build:labextension",
     "build:labextension": "jupyter labextension build .",
     "build:labextension:dev": "jupyter labextension build --development True .",
