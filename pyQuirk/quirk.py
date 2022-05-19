@@ -20,10 +20,10 @@ class Quirk(widgets.DOMWidget):
     _model_module = Unicode('pyquirk').tag(sync=True)
 
     # Version of the front-end module containing widget view
-    _view_module_version = Unicode('^0.1.0').tag(sync=True)
+    _view_module_version = Unicode('^0.1.7').tag(sync=True)
 
     # Version of the front-end module containing widget model
-    _model_module_version = Unicode('^0.1.0').tag(sync=True)
+    _model_module_version = Unicode('^0.1.7').tag(sync=True)
 
     # Widget specific property.
     # Widget properties are defined as traitlets. Any property tagged with `sync=True`
@@ -39,7 +39,7 @@ class Quirk(widgets.DOMWidget):
         qasm = circuit.qasm()
         self.circuit_qasm = qasm
         self.update_from_qasm(qasm)
-        
+
     def update_from_qasm(self, qasm):
         self.value = qasm_to_quirk(qasm)
 
@@ -81,14 +81,14 @@ def qasm_to_quirk(qasm):
 
     num_qubits = 0
     num_clbits = 0
-    
+
     qubit_match = qubit_search.findall(qasm)
     clbit_match = clbit_search.findall(qasm)
     if qubit_match:
         num_qubits = int(qubit_match[0])
     if clbit_match:
         num_clbits = int(clbit_match[0])
-        
+
     qreg = ""
     creg = ""
 
@@ -107,7 +107,7 @@ def qasm_to_quirk(qasm):
             continue
         if 'include' in instr:
             continue
-        
+
         if 'qreg' in instr:
             qreg = instr.replace('qreg ', '').split('[')[0]
             continue
